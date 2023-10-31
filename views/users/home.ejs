@@ -1,0 +1,24 @@
+<%- include('../layouts/header.ejs') %>
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="text-center">
+        <h3>Welcome, <%= user.name %></h3>
+
+        <table class="table table-bordered" style="width: 50%;">
+            <tr>
+                <td>Email</td>
+                <td class="text-center"><%= user.email %></td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td class="text-center"><%= user.mobile %></td>
+            </tr>
+        </table>
+
+        <a href="/edit?id=<%= user._id %>" class="btn btn-warning">Edit</a>
+        <br>
+        <a href="/logout" class="btn btn-danger mt-3">Logout</a>
+    </div>
+</div>
+
+<%- include('../layouts/footer.ejs') %>

@@ -1,0 +1,35 @@
+<%- include('../layouts/header.ejs') %>
+
+<div class="container mt-5">
+    <div class="card border-shadow bg-transparent mx-auto" style="max-width: 400px;">
+        <div class="card-body">
+            <h1 class="card-title text-center">Login</h1>
+
+            <% if (typeof message !== 'undefined') { %>
+                <div class="alert alert-danger" role="alert">
+                    <h4><%= message %></h4>
+                </div>
+            <% } %>
+
+            <form action="/login" method="post" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" class="form-control" required placeholder="Enter email" id="email">
+                    <p id="email-error" class="error-message"></p>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" class="form-control" required placeholder="Enter password" id="password">
+                    <p id="password-error" class="error-message"></p>
+                </div>
+                <br>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>      
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../layouts/footer.ejs') %>
