@@ -13,6 +13,7 @@ app.use("/static", express.static(path.join(__dirname, "public")));
 
 
 
+
 const PORT = process.env.PORT || 3000
 
 //for user routes
